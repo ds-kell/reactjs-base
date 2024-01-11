@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import userToken from "../userToken";
+import useToken from "../useToken";
 import axios from "axios";
 
 export const AuthRouter = () => {
-  const { setToken } = userToken();
+  const { setToken } = useToken();
   const navigate = useNavigate();
   const accessToken = localStorage.getItem("token");
 
