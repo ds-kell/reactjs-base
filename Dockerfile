@@ -2,12 +2,17 @@
 FROM node:18-alpine
 ENV NODE_ENV development
 
-WORKDIR /fe-react-base/
+WORKDIR /app/
 
-# COPY public/ /fe-react-base/public
-COPY src/ /fe-react-base/src
-COPY package.json /fe-react-base/
+# COPY public/ /app/public
+COPY src/ /app/src
+COPY public/ /app/public
+
+COPY package.json /app/
+
 RUN npm install
+
 # Expose port
 EXPOSE 3000
+
 CMD ["npm", "start"]
